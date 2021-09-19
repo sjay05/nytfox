@@ -3,6 +3,7 @@ import cv2
 import imagezmq
 import time
 import zmq
+import datetime
 import base64
 import socketio
 
@@ -23,7 +24,7 @@ def _convert_image_to_jpeg(image):
   return "data:image/jpeg;base64,{}".format(frame)
 
 def send_alert(frame):
-  text = "Theft Alert"
+  text = f"Detected at {datetime.datetime.now()} <br><br> Objects: [Car, Person, Person]"
   sio.emit('od2cloud', {'text': text, 'image': _convert_image_to_jpeg(frame)})
 
 if __name__ == '__main__':
@@ -36,5 +37,5 @@ if __name__ == '__main__':
     
     prev_image = image
     theft_flag = TheftProcessFrame(image)    
-    if True:
+    if theft_flag:
       send_alert(prev_image)

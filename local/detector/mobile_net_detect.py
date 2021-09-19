@@ -57,7 +57,7 @@ class MobileNet_Detector:
         
         if self.labels[allID[ci][0] - 1] == 'person':
           if (float(current_time - self.previous) > 1.0):
-            # print("[LOG] DNN Detected Person in {:.6f} seconds".format(end - start))
+            print("[LOG] DNN Detected Person in {:.6f} seconds".format(end - start)) 
             self.previous = current_time
 
           final_name = "person"
