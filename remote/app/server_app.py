@@ -28,7 +28,7 @@ def video_feed():
 
 @app.route('/stream')
 def stream():
-  return render_template('tmp_stream.html')
+  return render_template('stream.html')
 
 @socketio.on('connect', namespace='/theft_alert')
 def connect_camera():
@@ -44,8 +44,8 @@ def handle_cv_message(message):
 
 @app.route('/')
 def index():
-  return render_template('tmp_index.html')
+  return render_template('index.html')
 
 if __name__ == '__main__':
 #  app.run(debug = True)
-  app.run(host="0.0.0.0")
+  app.run(host="0.0.0.0", debug = True)

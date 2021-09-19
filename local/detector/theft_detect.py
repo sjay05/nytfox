@@ -2,7 +2,6 @@ import numpy as np
 import cv2
 
 from mobile_net_detect import MobileNet_Detector
-# from yolo_detect import Yolo_Detector
 
 # from face_recog import FaceRecognition
 
@@ -67,20 +66,20 @@ def ProcessFrame(img, det):
   return True
 
 det = MobileNet_Detector()
-# det = Yolo_Detector()
 
 def TheftProcessFrame(img):
   return ProcessFrame(img, det) 
-#  cv2.imshow('Output', img)
   cv2.waitKey(1)
 
-# def Test():
-# #  cap = cv2.VideoCapture('test_run.mov')
-#   cap = cv2.VideoCapture(0)
-#   while True:
-#     res, img = cap.read()
-#     ProcessFrame(img, det)
-#     cv2.imshow('Output', img)
-#     cv2.waitKey(1)
+"""
+def Test():
+  cap = cv2.VideoCapture('test_run.mov')
+  cap = cv2.VideoCapture(0)
+  while True:
+    res, img = cap.read()
+    ProcessFrame(img, det)
+    cv2.imshow('Output', img)
+    cv2.waitKey(1)
 
-# Test()
+Test()
+"""

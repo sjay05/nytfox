@@ -15,24 +15,10 @@ image_hub = imagezmq.ImageHub(open_port='tcp://localhost:5577', REQ_REP=False)
 print("[LOG] Waiting for router...")
 first_recv = False
 
-# @sio.event
-# def connect():
-#     print('connection established')
-
-# @sio.event
-# def my_message(data):
-#     print('message received with ', data)
-#     sio.emit('my response', {'response': 'my response'})
-
-# @sio.event
-# def disconnect():
-#     print('disconnected from server')
-
 def _convert_image_to_jpeg(image):
   # Encode frame as jpeg
   frame = cv2.imencode('.jpg', image)[1].tobytes()
   # Encode frame in base64 representation and remove
-  # utf-8 encoding
   frame = base64.b64encode(frame).decode('utf-8')
   return "data:image/jpeg;base64,{}".format(frame)
 

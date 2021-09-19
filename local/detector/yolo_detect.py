@@ -56,6 +56,5 @@ class Yolo_Detector:
           all_boxes.append(('car', x, y, x + w, y + h))
         if self.labels[classIDs[i]] == 'person':
           all_boxes.append(('person', x, y, x + w, y + h))        
-
-#    print(all_boxes)
+          
     return all_boxes
