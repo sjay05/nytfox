@@ -1,6 +1,6 @@
 # NytFox 
 
-> A Real Time Car Theft Monitoring System.
+> Real Time Car Theft Monitoring and Alert System with Raspberry PI 3
  
 ![Image](https://i.ibb.co/y0PzzPh/Screen-Shot-2021-09-19-at-12-27-10-AM.png)
 
